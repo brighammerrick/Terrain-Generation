@@ -1,0 +1,84 @@
+body {
+ margin: 0;
+ overflow: hidden;
+ background: black;
+}
+
+
+canvas {
+  /* position canvas behind UI so #controls (z-index:10) is visible */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh; /* use full viewport so layout is predictable */
+}
+
+
+label,
+p {
+  /* don't force white globally — inherit from container so controls can set readable color */
+  color: inherit;
+}
+
+#controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  pointer-events: auto;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+hr {
+  transform: rotate(90deg);
+  width: 1vh;
+  border: 1px solid white;
+}
+
+#advanced-controls {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 11;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+  pointer-events: auto;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+#advanced-controls .control-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#advanced-controls label {
+  width: 80px;
+  flex: 0 0 80px;
+}
+
+/* small value readouts */
+#advanced-controls span {
+  min-width: 36px;
+  text-align: right;
+  color: #ddd;
+}
